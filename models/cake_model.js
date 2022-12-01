@@ -1,17 +1,88 @@
-const cake= [
-    {
-        name:'Vanila cake',
-        price:30,
-        image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRg24zArxEdYGlWl5I2_JKssP6SNllGVn-plnxRhbytTMfI14D1YaI8XY6D73Mz4JathOM&usqp=CAU'
-    },
-    {
-        name:'birthday cake',
-        price:30,
-        image:'https://sallysbakingaddiction.com/wp-content/uploads/2022/09/funfetti-birthday-cake.jpg'
-    },
-    {
-        name:'cake',
-        price:30,
-        image:'https://images.pexels.com/photos/1702373/pexels-photo-1702373.jpeg?cs=srgb&dl=pexels-brent-keane-1702373.jpg&fm=jpg'
+class Collection {
+    #Model
+    #currentId
+    #items
+    constructor(model, startingData) {
+        this.#Model = model;
+        this.#currentId = 0;
+        this.#items = this.#populateItems( startingData );
     }
-]
+
+    /**
+     * @description It will take an array as a argument 
+     * @returns on Object that contains the { id as a key } and { te item as the value } 
+     */
+
+    #populateItems( startingData ) {
+        return startingData.reduce(( acc, item, idx ) => {
+            this.#currentId = idx;
+            acc[this.#currentId] = new this.#Model(item, idx)
+            return acc;
+        }, {});
+    }
+
+    #generateId(){
+        return ++this.#currentId
+    }
+
+    /**
+     * @description Will return an array with all items availible in this.items
+     * @returns array
+     */
+
+    find() {
+        return Object.values(this.#items);
+    }
+
+    /**
+     * @description Will return item match with the itemId
+     * @param { string } itemId
+     * @param { function } callBack Will return error or item
+     * @returns function;
+     */
+
+    findById( itemId, callBack ) {
+        if (!itemId) return console.log("missing id in first argument");
+    
+        if (typeof callBack !== "function") {
+            return console.log("missing function in second argument");
+        }
+    
+        let error;
+        const item = this.#items[itemId];
+    
+        if (!item) {
+            error = { message: `item with id "${itemId}" can't be found` };
+        }
+    
+        return callBack(error, item);
+    }
+};
+
+class Cake {
+    constructor( data, id ) {
+        this.id = id;
+        this.name = data.name;
+        this.price = data.price;
+        this.image = data.image;
+    }
+}
+
+// at the bottom 
+module.exports = new Collection(Cake, [
+    {
+      name: "Vanila cake",
+      price: 29,
+      image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRg24zArxEdYGlWl5I2_JKssP6SNllGVn-plnxRhbytTMfI14D1YaI8XY6D73Mz4JathOM&usqp=CAU",
+    },
+    {
+      name: "birthday cake",
+      price: 35,
+      image: "https://sallysbakingaddiction.com/wp-content/uploads/2022/09/funfetti-birthday-cake.jpg",
+    },
+    {
+      name: "cake",
+      price: 50,
+      image:"https://images.pexels.com/photos/1702373/pexels-photo-1702373.jpeg?cs=srgb&dl=pexels-brent-keane-1702373.jpg&fm=jpg",
+    }
+  ]);
