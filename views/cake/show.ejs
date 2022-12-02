@@ -5,37 +5,53 @@
 
     <section class="hero is-medium has-background-light">
         <div class="hero-body">
-            <h1 class="title">artist Show </h1>
+            <h1 class="title"> حلويات  </h1>
         </div>
     </section>
 
     <div class="container is-max-widescreen p-5">
         <article class="media">
-            <%for(let i=0; i< artist.Image.length; i++){%>
-                <% const image = artist.Image[i]%>
+            
                     <section class="card-image">
                         <figure class="image is-3by3">
-                            <img src="<%= artist.Image[i] %>" alt="Placeholder image" />
-                            <small><%= artist.Artwork[i] %></small>
+                            <img src="<%= cake.image %>" alt="Placeholder image" />
                         </figure>
                     </section>
-            <% } %>
-            <div class="card-content">
-                <div class="content">
-                    <h3> <%= artist.Name %></h3>
-                    <small><%= artist.Mediums %></small>
-                    <small><%= artist.Date %></small>
-                       
-                    <div class="field mt-5 is-grouped">
-                        <div class="control">
-                            <a class="button is-info" href="/artist/<%= artist._id %>/edit">Edit artist</a>
-                        </div>
-                        <p class="control">
-                            <form action="/artist/<%= artist._id %>?_method=DELETE" method="POST">
-                                <input class="button is-danger" type="submit" value="Delete artist"/>                    
-                            </form>
-                        </p>
-                    </div>
+                    
+                    <div class="card-content">
+                        <div class="content">
+                            <div class="card-title">
+                                <%= cake.name %>
+                            </div>
+                            <small>$<%= cake.price %></small>
+
+                            <div class="field mt-5 is-grouped">
+                                <div class="control">     
+                                    <h5> :يحتوى البيض </h5>
+                                    <button> يحتوى البيض </button>
+                                    <button>  لا يحتوي على البيض </button>
+                                    <h5></h5>
+                                </div>
+                                <p class="control">
+                                    <form action="" method="POST">
+                                        <input class="button is-danger" type="submit" value="اطلب الان "/>                    
+                                    </form>
+                                </p>
+                                <!-- <div>
+                                    <h2> تعليمات </h2>
+                                    <form action="" method="">
+                                        <input class="" type="" value="">
+                                        <button>submit</button>
+                                    </form>
+                                </div> -->
+                                <div>
+                                    <h4>الوصف</h4>
+                                    <p>
+                                        another desi favorite dessert, rasmalai, is used to make a cake exploding with intense flavorful ingredients such as saffron, rasmalai, and pistachios and almonds.  This cake is topped with whipped cream saffron frosting and edible rose petals.
+                                    </p>
+                                    <!-- <button>إرسال</button> -->
+                                </div>
+                            </div>                   
                 </div>
             </div>
         </article>
