@@ -57,6 +57,53 @@ class Collection {
     
         return callBack(error, item);
     }
+
+    /**
+     * @param {object} data
+     * @param { function } callBack Will return error or item
+     * @returns function;
+    */
+
+    create( data, callBack ) {
+        if (!data) return console.log("missing data in first argument");
+
+        if (typeof callBack !== "function") {
+        return console.log("missing function in second argument");
+        }
+
+        let error, newItem;
+
+        const isEmpty = Object.keys(data).every(field => data[field] === "");
+
+        if (isEmpty) {
+        error = { message: `you have empty fields` };
+        } else {
+        
+        newItem = new this.#Model( data, this.#generateId());
+
+        this.#items[newItem.id] = newItem;
+        }
+
+        return callBack(error, newItem);
+    }
+
+    /**
+   * @param {string} itemId
+   * @param { function } callBack Will return error or item
+   * @returns function;
+   */
+
+    findByIdAndDelete( itemId, callBack ) {
+        let error = null;
+        const item = this.#items[itemId]
+        const isDeleted = delete this.#items[itemId];
+
+        if ( !isDeleted ) {
+        error = { message: `item with id "${itemId}" can't be found` };
+        }
+
+        return callBack(error, item);
+    }
 };
 
 class Cake {
