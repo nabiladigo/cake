@@ -86,7 +86,6 @@ class Collection {
 
         return callBack(error, newItem);
     }
-
     /**
    * @param {string} itemId
    * @param { function } callBack Will return error or item
@@ -103,6 +102,28 @@ class Collection {
         }
 
         return callBack(error, item);
+    }
+    /**
+   * @param {string} itemId
+   * @param {object} data
+   * @param { function } callBack Will return error or item
+   * @returns function;
+   */
+
+    findByIdAndUpdate( itemId, data, callBack ) {
+        let error = null;
+        const item = this.#items[itemId];
+
+        if (!item) {
+            error = { message: `item can't be found` };
+        } else {
+            this.#items[itemId] = {
+                ...item,
+                ...data
+            }
+        }
+
+        return callBack(error, this.#items[itemId]);
     }
 };
 

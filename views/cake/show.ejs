@@ -26,6 +26,18 @@
                             <small>$<%= cake.price %></small>
 
                             <div class="field mt-5 is-grouped">
+                                <div class="control">
+                                    <a class="button is-info" href="/cake/<%= cake.id %>/edit">تعديل</a>
+                                </div>
+
+                                <div class="control">
+                                    <form action="/cake/<%= cake.id %>?_method=DELETE" method="POST">
+                                            <input class="button is-danger" type="submit" value="	Delete Cake"/>                    
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="field mt-5 is-grouped">
                                 <div class="control">     
                                     <h5> :يحتوى البيض </h5>
                                     <button> يحتوى البيض </button>
