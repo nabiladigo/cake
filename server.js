@@ -1,11 +1,13 @@
 const express= require('express');
 const app =express();
+
+require('./config/db.connection');
+
 // const path= require('path'); think if I need ithere
-const cakeCtrls= require('./controllers/cake_controllers');
-const recipesCtrls= require('./controllers/recipes_controllers');
+const controllers = require('./controllers')
 const methodOverride = require('method-override');
 
-const PORT= 4000;
+const PORT= process.env.PORT || 4000;
 
 
 
@@ -16,8 +18,8 @@ app.use(express.static('public'));
 app.use(methodOverride('_method'));
 // app.set('views', path.join(__dirname, '/views'));this is related to the path it allow u to access from any folder
 // app.use(express.static(path.join(__dirname,'public'))); same as 15
-app.use('/cake', cakeCtrls);
-app.use('/recipes', recipesCtrls);
+app.use('/cake', controllers.Cake);
+// app.use('/recipes', controllers.recipes);
 
 
 // not sure why I used this 
