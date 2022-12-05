@@ -19,7 +19,7 @@ app.use(methodOverride('_method'));
 // app.set('views', path.join(__dirname, '/views'));this is related to the path it allow u to access from any folder
 // app.use(express.static(path.join(__dirname,'public'))); same as 15
 app.use('/cake', controllers.Cake);
-// app.use('/recipes', controllers.recipes);
+app.use('/recipes', controllers.Recipe);
 
 
 // not sure why I used this 
