@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+    <html>
+        <%- include ('../partials/head.ejs', {page: 'Edit songs'}) %>
+        <%- include ('../partials/nav.ejs') %>
+       
+        <section class="selector">
+            <form action="/recipes/<%=recipe.id%>?_method=PUT" method="POST">
+                <fieldset>
+                    <legend> تعديل </legend>
+                        <div class="form-group">
+                          <label for="recipe-name"> اسم الحلوى </label>
+                          <input type="text" placeholder ="اسم الحلوى " id="name" value="<%= recipe.name %>"/>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="recipe-price"> ثمن الحلوى  </label>
+                          <input type="number" placeholder=" الثمن " name="price"  value="<%= recipe.price %>"/>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="recipe-image"> صورة الحلوى </label>
+                          <input type="text" placeholder="http://" name="image" value="<%= recipe.image %> " />
+                        </div>
+
+                        <div class="control">
+                          <a class="button " href="/recipes/<%= recipe.id %> ">إلغاء</a>
+                          <button class="btn btn-success" type="edit ">تعديل </button>
+                        </div>
+                </fieldset>
+            </form>
+        </section>
+      </body>
+    </html>
+      

@@ -1,27 +1,3 @@
-// const mongoose= require('mongoose');
-// const Schema = mongoose.Schema;
-
-// const cakeSchema= new Schema({
-//     name:{
-//         type: String,
-//         required:true
-//     },
-//     image:{
-//         type: String,
-//         // required:true
-//     },
-//     price:{
-//         type: Number,
-//         min: [0, 'you can not add a negative number'],
-//         required: [true, 'price can not be empty'],
-//     },
-//     description: {
-//         type: String,
-//     }
-// })
-// const Cake = mongoose.model('Cake', cakeSchema);
-// module.exports = Cake;
-
 
 class Collection {
     #Model
@@ -152,7 +128,7 @@ class Collection {
     }
 };
 
-class Cake {
+class Recipe {
     constructor( data, id ) {
         this.id = id;
         this.name = data.name;
@@ -162,7 +138,7 @@ class Cake {
 }
 
 // at the bottom 
-module.exports = new Collection(Cake, [
+module.exports = new Collection(Recipe, [
     {
       name: "Vanila cake",
       price: 29,
