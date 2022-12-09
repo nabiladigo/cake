@@ -1,26 +1,25 @@
 const express= require('express');
 const router= express.Router();
-const db= require('../models');
+const {Recipe}= require('../models');
 
-router.get('/', (req, res, next) => {
-    db.Recipe.find({},(error, allRecipes)=>{
-        if (error) {
-            return console.log(error);
-        }
-        const context= {
-            recipes: allRecipes,
-        };
-        res.render('recipes/index', context);
-    })
+router.get('/', async(req, res) => {
+    try{
+        const recipe = Recipe.find()
+        const context = {recipe}
+        return  res.render('recipes/index', context);
+    }
+    catch(error){
+        res.status(404).render('404', {error: error})
+    }
 });
 
-// this rout is not working
+
 router.get('/new', (req, res)=>{
     res.render("recipes/new.ejs")
 });
 
 router.post('/', (req,res)=>{
-    db.Recipe.create(req.body, (error, createdRecipe)=>{
+    Recipe.create(req.body, (error, createdRecipe)=>{
         if (error) {
             console.log(error)
             req.error= error;
@@ -37,13 +36,11 @@ router.post('/', (req,res)=>{
 
 
 
-router.get('/:recipeId', (req,res, next)=>{
-    db.Recipe.findById(req.params.cakeId, (error, foundRecipe)=>{
+router.get('/:recipeId', (req,res)=>{
+    Recipe.findById(req.params.recipeId, (error, foundRecipe)=>{
         if (error){
             console.log(error);
-            req.error= error
-            return next();
-            // res.status(404).render('404', {error: error})
+            res.status(404).render('404', {error: error})
         }
          const context= {recipe: foundRecipe};
         return res.render('recipes/show', context);
@@ -52,12 +49,10 @@ router.get('/:recipeId', (req,res, next)=>{
 
 
 router.delete('/:recipeId', (req, res) => {
-    db.Recipe.findByIdAndDelete( req.params.recipeId, (error, deletedRecipe) => {
+    Recipe.findByIdAndDelete( req.params.recipeId, (error, deletedRecipe) => {
         if (error) { 
             console.log(error);
-            req.error= error
-            return next();
-            // res.status(404).render('404', {error: error})
+            res.status(404).render('404', {error: error})
         }
             console.log(deletedRecipe);
         return res.redirect('/recipes');
@@ -65,12 +60,10 @@ router.delete('/:recipeId', (req, res) => {
 });
 
 router.get('/:recipeId/edit', (req, res)=>{
-    db.Recipe.findById(req.params.recipeId, (error, updateRecipe)=>{
+    Recipe.findById(req.params.recipeId, (error, updateRecipe)=>{
         if(error) {
             console.log(error);
-            req.error= error
-            return next();
-            // res.status(404).render('404.ejs', {error: error});
+            res.status(404).render('404.ejs', {error: error});
         }
         const context={recipe: updateRecipe}
         return res.render('recipes/edit', context);
@@ -78,7 +71,7 @@ router.get('/:recipeId/edit', (req, res)=>{
 })
 
 router.put('/:recipeId', (req, res)=>{
-    db.Recipe.findByIdAndUpdate(req.params.recipeId,
+    Recipe.findByIdAndUpdate(req.params.recipeId,
         {
             $set:req.body
         },
@@ -88,11 +81,9 @@ router.put('/:recipeId', (req, res)=>{
          (error, updateRecipe)=>{
         if(error) {
             console.log(error);
-            req.error= error
-            return next();
-            // res.status(404).render('404.ejs', {error: error});
+            res.status(404).render('404.ejs', {error: error});
         }
-            return res.redirect(`/cake/${updateRecipe.id}`);
+            return res.redirect(`/recipes/${updateRecipe.id}`);
         
     })
 })

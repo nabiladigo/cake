@@ -1,32 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+    <!-- This is my heading now -->
     <%- include ('./partials/head.ejs', {page: 'You messed up!'}) %>
+  
+    <!-- This is my nav bar now -->
     <%- include ('./partials/nav.ejs') %>
-    <section class="page_404">
-      <div class="container">
-        <div class="row">	
-        <div class="col-sm-12 ">
-        <div class="col-sm-10 col-sm-offset-1  text-center">
-        <div class="four_zero_four_bg">
-          <h1 class="text-center ">404</h1>
-        
-        
-        </div>
-        
-        <div class="contant_box_404">
-        <h3 class="h2">
-          the page you are looking for not avaible!
-        </h3>
-        
-        <p>the page you are looking for not avaible!</p>
-        
-        <a href="/" class="link_404">Go to Home</a>
-      </div>
-        </div>
-        </div>
-        </div>
+  
+    <section class="hero is-medium has-background-light">
+      <div class="hero-body">
+				<img
+          width="300px"
+          src="https://media.giphy.com/media/xTiN0L7EW5trfOvEk0/giphy.gif"
+          alt="not found"
+        />
+        <p class="title">404 Not Found 😞</p>
+        <% if (error) { %>
+        <p><%= error.message %></p>
+        <% } %>
       </div>
     </section>
-  
-</body>
+    <main class="container is-max-widescreen">
+      <div class="columns p-6">
+        <div class="column">
+          <a class="button is-info" href="/">الصفحة الرئيسية</a>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>

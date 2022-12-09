@@ -1,9 +1,7 @@
 const mongoose = require('mongoose');
 require('dotenv'). config();
-
-const connectionStr= 'mongodb://localhost:27017/cake';
-// const connectionStr = process.env.MONGODB_URI;
-
+// const connectionStr= 'mongodb://localhost:27017/cake';
+const connectionStr = process.env.MONGODB_URI;
 mongoose.connect(connectionStr, {
   useNewUrlParser: true,
   useUnifiedTopology: true,

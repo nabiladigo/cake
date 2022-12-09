@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
-        <%- include ('../partials/head.ejs', {page: 'All artist'}) %>
+        <%- include ('../partials/head.ejs', {page: 'All cake'}) %>
         <%- include ('../partials/nav.ejs') %>  
     <section class="hero is-medium has-background-light">
         <div class="hero-body">
@@ -11,6 +11,7 @@
 
     <main class="container is-max-widescreen">
         <div class="columns is-multiline p-5">
+            
             <% for (let idx =0; idx<cake.length; idx++){ %> <% 
                 const gateau = cake[idx] %>
                     <div class="column is-one-third">

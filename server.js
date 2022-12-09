@@ -1,44 +1,24 @@
 const express= require('express');
 const app =express();
-
 require('./config/db.connection');
-
-// const path= require('path'); think if I need ithere
-const controllers = require('./controllers')
+const controllers = require('./controllers');
 const methodOverride = require('method-override');
-
 const PORT= process.env.PORT || 4000;
 
-
-
 app.set('view engine','ejs');
-
 app.use(express.urlencoded({extended:false}));
 app.use(express.static('public'));
 app.use(methodOverride('_method'));
-// app.set('views', path.join(__dirname, '/views'));this is related to the path it allow u to access from any folder
-// app.use(express.static(path.join(__dirname,'public'))); same as 15
 app.use('/cake', controllers.Cake);
 app.use('/recipes', controllers.Recipe);
 
-
-// not sure why I used this 
-// app.use((req,res,next)=>{
-//     console.log('I run for all routes');
-//     next();
-// })
+// app.use('/user', controllers.User);
+// app.use('/review', controllers.Review);
 
 app.get('/', (req,res)=>{
-    res.render('home')
-})
+    res.render('home')})
 app.get('/about', (req,res)=>{
-    res.render('about')
-});
-
-// app.get('/new', (req, res)=>{
-//     res.render("cake/new.ejs")
-// });
-
+    res.render('about')})
 
 app.get("/*", (req, res) => {
     const context = { error: req.error };

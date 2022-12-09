@@ -1,27 +1,27 @@
 const express = require('express');
 const router= express.Router();
-const db= require('../models');
+const {Cake}= require('../models');
 
 
-router.get('/', (req, res, next) => {
-    db.Cake.find({},(error, allCake)=>{
-        if (error) {
-            return console.log(error);
-        }
-        const context= {
-            cake: allCake,
-        };
-        res.render('cake/index', context);
-    })
+router.get('/', async(req, res) => {
+    try{
+        const cake = await Cake.find()
+        const context ={cake}
+        return res.render('cake/index', context);
+    }
+    catch(error){
+        res.status(404).render('404', {error: error})
+
+    }
 });
 
-// this rout is not working
+
 router.get('/new', (req, res)=>{
     res.render("cake/new.ejs")
 });
 
 router.post('/', (req,res)=>{
-    db.Cake.create(req.body, (error, createdCake)=>{
+    Cake.create(req.body, (error, createdCake)=>{
         if (error) {
             console.log(error)
             req.error= error;
@@ -38,13 +38,11 @@ router.post('/', (req,res)=>{
 
 
 
-router.get('/:cakeId', (req,res, next)=>{
-    db.Cake.findById(req.params.cakeId, (error, foundCake)=>{
+router.get('/:cakeId', (req,res)=>{
+    Cake.findById(req.params.cakeId, (error, foundCake)=>{
         if (error){
             console.log(error);
-            req.error= error
-            return next();
-            // res.status(404).render('404', {error: error})
+            res.status(404).render('404', {error: error});
         }
          const context= {cake: foundCake};
         return res.render('cake/show', context);
@@ -53,12 +51,10 @@ router.get('/:cakeId', (req,res, next)=>{
 
 
 router.delete('/:cakeId', (req, res) => {
-    db.Cake.findByIdAndDelete( req.params.cakeId, (error, deletedCake) => {
+    Cake.findByIdAndDelete( req.params.cakeId, (error, deletedCake) => {
         if (error) { 
             console.log(error);
-            req.error= error
-            return next();
-            // res.status(404).render('404', {error: error})
+            res.status(404).render('404', {error: error})
         }
             console.log(deletedCake);
         return res.redirect('/cake');
@@ -66,19 +62,17 @@ router.delete('/:cakeId', (req, res) => {
 });
 
 router.get('/:cakeId/edit', (req, res)=>{
-    db.Cake.findById(req.params.cakeId, (error, updateCake)=>{
+    Cake.findById(req.params.cakeId, (error, updateCake)=>{
         if(error) {
             console.log(error);
-            req.error= error
-            return next();
-            // res.status(404).render('404.ejs', {error: error});
+            res.status(404).render('404.ejs', {error: error});
         }
         const context={cake: updateCake}
         return res.render('cake/edit', context);
     });
 })
 router.put('/:cakeId', (req, res)=>{
-    db.Cake.findByIdAndUpdate(req.params.cakeId,
+    Cake.findByIdAndUpdate(req.params.cakeId,
         {
             $set:req.body
         },
@@ -88,9 +82,7 @@ router.put('/:cakeId', (req, res)=>{
          (error, updateCake)=>{
         if(error) {
             console.log(error);
-            req.error= error
-            return next();
-            // res.status(404).render('404.ejs', {error: error});
+            res.status(404).render('404.ejs', {error: error});
         }
             return res.redirect(`/cake/${updateCake.id}`);
         
@@ -98,4 +90,4 @@ router.put('/:cakeId', (req, res)=>{
 })
 
 
-module.exports = router;
+module.exports= router;

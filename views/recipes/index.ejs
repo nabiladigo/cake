@@ -1,39 +1,37 @@
 <!DOCTYPE html>
 
 <html lang="en">
-        <%- include ('../partials/head.ejs', {page: 'All artist'}) %>
+        <%- include ('../partials/head.ejs', {page: 'All recipe'}) %>
         <%- include ('../partials/nav.ejs') %>  
     <section class="hero is-medium has-background-light">
         <div class="hero-body">
-            <p class="title"> مطبخ ام نور للحلويات  </p>
+            <p class="title"> وصفات  ام نور  </p>
         </div>
     </section>
-
     <main class="container is-max-widescreen">
         <div class="columns is-multiline p-5">
-            <% for (let idx =0; idx<recipe.length; idx++){ %> <% 
-                const rec = recipe[idx] %>
-                    <div class="column is-one-third">
-                        <article class="card">
-                            <section class="card-image">
-                                <a href="/recipes/<%= rec.id%>" >
+            <% for ( let idx= 0; idx<recipe.length; idx++ ){ %> <%
+            const rec = recipe[idx] %>
+                <div class="column is-one-third">
+                    <article class="card">
+                        <section class="card-image">
+                            <a href="/recipes/<%=rec.id%>" >
                                 <figure class="image is-3by3">
-                                        <img src="<%= rec.image%> " alt="Placeholder image" />
-                                    </figure>
-                                </a>
+                                    <img src="<%= rec.image %>" alt="Placeholder image" />
+                                </figure>
+                            </a>
                         </div>
-                    </section>
-                            <div class="card-content">
-                                <div class="content">
-                                    <h3>
-                                        <a href="/recipes/<%= rec.id%>" ><%= rec.name %> </a>
-                                    </h3>
-                                    <p>$<%= rec.price%></p>
-                                </div>
+                        </section>
+                        <div class="card-content">
+                            <div class="content">
+                                <h3>
+                                    <a href="/recipes/<%= rec.id %>"> <%= rec.name %> </a>
+                                </h3>
                             </div>
+                        </div>
                     </article>
                 </div>
-            <% } %>           
+            <%} %>          
         </div>
     </main>
 </body>

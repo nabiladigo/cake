@@ -2,7 +2,7 @@ const mongoose= require('mongoose');
 
 const Schema= mongoose.Schema;
 
-const recipesSchema= new Schema({
+const recipeSchema= new Schema({
     name:{
         type: String, 
         required: true
@@ -13,22 +13,22 @@ const recipesSchema= new Schema({
     },
     direction:{
         type: String,
-        required: true
+        // required: true
     },
     ingredients:{
         type: String,
         required: true
     },
-    cookingTime:{
+    cooking:{
         type:Number,
-        required:true
+        // required:true
     },
-    prepTime:{
+    prep:{
         type:Number,
-        required:true
+        // required:true
     }
 });
 
-const Recipe = mongoose.model('Recipe', recipesSchema);
+const Recipe = mongoose.model('Recipe', recipeSchema);
 
 module.exports= Recipe;
