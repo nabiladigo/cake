@@ -25,7 +25,12 @@
                     <small><%= recipe.prep %> min</small>
                     <p>
                         <div>ingredints:
-                            <%= recipe.ingredients %></div>
+                            <ul>
+                                <li>
+                                    <%= recipe.ingredients %>
+                                </li>
+                            </ul>
+                        </div>
                         <div>directions:
                             <%= recipe.direction %></div>
                     </p>

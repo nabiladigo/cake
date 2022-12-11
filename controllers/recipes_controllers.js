@@ -4,7 +4,7 @@ const {Recipe}= require('../models');
 
 router.get('/', async(req, res) => {
     try{
-        const recipe = Recipe.find()
+        const recipe = await Recipe.find()
         const context = {recipe}
         return  res.render('recipes/index', context);
     }

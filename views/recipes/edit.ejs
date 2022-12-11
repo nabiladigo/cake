@@ -9,18 +9,29 @@
                     <legend> تعديل </legend>
                         <div class="form-group">
                           <label for="recipe-name"> اسم الحلوى </label>
-                          <input type="text" placeholder ="اسم الحلوى " id="name" value="<%= recipe.name %>"/>
+                          <input type="text" placeholder ="اسم الحلوى " name="name" value="<%= recipe.name %>"/>
                         </div>
-
-                        <div class="form-group">
-                          <label for="recipe-price"> ثمن الحلوى  </label>
-                          <input type="number" placeholder=" الثمن " name="price"  value="<%= recipe.price %>"/>
-                        </div>
-
                         <div class="form-group">
                           <label for="recipe-image"> صورة الحلوى </label>
                           <input type="text" placeholder="http://" name="image" value="<%= recipe.image %> " />
                         </div>
+                        <div class="form-group">
+                          <label for="recipe-prep"> وقت الاعداد  </label>
+                          <input type="number" placeholder=" وقت الاعداد " name="prep"  value="<%= recipe.prep %>"/>
+                        </div>
+                        <div class="form-group">
+                          <label for="recipe-cooking"> وقت  الطهي </label>
+                          <input type="number" placeholder="وقت  الطهي " name="cooking" value="<%= recipe.cooking %> " />
+                        </div>
+                        <div class="form-group">
+                          <label for="recipe-ingredients"> المكونات </label>
+                          <input type="text" placeholder="المكونات " name="ingredients" value="<%= recipe.ingredients %> " />
+                        </div>
+                        <div class="form-group">
+                          <label for="recipe-direction">  تعليمات </label>
+                          <input type="text" placeholder=" تعليمات " name="direction" value="<%= recipe.direction %> " />
+                        </div>
+                        
 
                         <div class="control">
                           <a class="button " href="/recipes/<%= recipe.id %> ">إلغاء</a>

@@ -10,28 +10,31 @@
     </section>
     <main class="container is-max-widescreen">
         <div class="columns is-multiline p-5">
-            <% for ( let idx= 0; idx<recipe.length; idx++ ){ %> <%
-            const rec = recipe[idx] %>
+            <% for (let i= 0; i<recipe.length; i++){ %> 
+                <% const rec= recipe[i] %>
                 <div class="column is-one-third">
                     <article class="card">
                         <section class="card-image">
-                            <a href="/recipes/<%=rec.id%>" >
+                            <a href="/recipes/<%= rec.id %>">
                                 <figure class="image is-3by3">
-                                    <img src="<%= rec.image %>" alt="Placeholder image" />
+                                    <img src="<%= rec.image %>" alt="Placeholder image"/>
+
                                 </figure>
                             </a>
-                        </div>
+                            </div>
                         </section>
                         <div class="card-content">
                             <div class="content">
                                 <h3>
-                                    <a href="/recipes/<%= rec.id %>"> <%= rec.name %> </a>
+                                    <a href="/recipes/<%= rec.id %>"><%= rec.name %></a>
                                 </h3>
+                                <hr/>
+                                <p>$<%= rec.price %></p>
                             </div>
                         </div>
                     </article>
                 </div>
-            <%} %>          
+            <% }  %>      
         </div>
     </main>
 </body>

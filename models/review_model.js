@@ -12,7 +12,7 @@ const ReviewSchema = new mongoose.Schema(
       type: String,
     //   required: [true, "You must provide a reason for your review score."],
     },
-    product: {
+    cake: {
       type: mongoose.Types.ObjectId,
       ref: "Cake",
     },
