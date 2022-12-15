@@ -5,56 +5,56 @@
     
     <!-- This is my nav bar now -->
     <%- include ('../partials/nav.ejs') %>
-
-        <section class="hero-is-medium has-background-light">
-            <div class="hero-body">
-                <h1 class="title"> اضافة  وصفة جديدة </h1>
-            </div>
-        </section>
+    <section class="hero is-medium has-background-light">
+        <div class="hero-body text-center">
+            <h1 class="title"> اضافة  وصفة جديدة   <h1>
+        </div>
+    </section>
+        <div class="container-fluid m-5 text-center">
             <form action="/recipes" method="POST">
                 <div class="field">
-                    <label class="label"> اسم الحلوى  </label>
+                    <label class="label"> اسم الحلوى:  </label>
                     <div class="control">
                         <input class="input" type="text" placeholder="اسم الحلوى " name="name"/>
                     </div>
                 </div>
                 <div class="field">
-                    <label class="label"> صورة الحلوى  </label>
+                    <label class="label"> صورة الحلوى:  </label>
                     <div class="control">
                         <input class="input" type="text" placeholder="http://" name="image" />
                     </div>
                 </div>
                 <div class="field">
-                    <label class="label"> وقت الاعداد </label>
+                    <label class="label"> وقت الاعداد: </label>
                     <div class="control">
                         <input class="input" type="number" placeholder="وقت الاعداد " name="cooking" />
                     </div>
                 </div>
                 <div class="field">
-                    <label class="label"> وقت  الطهي </label>
+                    <label class="label"> وقت  الطهي: </label>
                     <div class="control">
                         <input class="input" type="number" placeholder="وقت الطهي  " name="prep" />
                     </div>
                 </div>
                 <div class="field">
-                    <label class="label">  المكونات </label>
+                    <label class="label">  المكونات: </label>
                     <div class="control">
                         <input class="input" type="text" placeholder="مكونات" name="ingredients" />
                     </div>
                 </div>
                 <div class="field">
-                    <label class="label">  تعليمات </label>
+                    <label class="label">  تعليمات: </label>
                     <div class="control">
                         <input class="input" type="text" placeholder="تعليمات " name="direction" />
                     </div>
                 </div>
-        
+                <br>
                 <div class="field is-grouped">
                     <div class="control">
                         <button class="button is-info">اضف</button>
                     </div>
                 </div>
             </form>
-        </section>
+        </div>
     </body>
 </html>

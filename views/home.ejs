@@ -2,17 +2,19 @@
 
 <html dir="rtl" lang="ar">
         <%- include ('./partials/head.ejs', {page: 'All cake'}) %>
-        <!-- need towork on header
-        <header>
-            <div
-                class="img-fluid bg-image"
-                style="
-                background-image: url('https://i.imgur.com/PHIkcIW.jpg');
-                height: 640px; width: 1345px;
-                "
-            >
-            <!-- <img src="https://i.imgur.com/Jop6XGR.jpg" title="source: imgur.com" /> -->
-        <!-- </header> -->
+         <!-- need to work on header -->
+        <!-- <style>
+          .header-img{
+            background-size: cover; 
+             height: 100%;
+            width: 100%; 
+
+          }
+        </style>
+            <div>
+              <img class="header-img "style="width:400px; height: 400px;" src="https://i.imgur.com/Jop6XGR.jpg"/>
+            </div> */
+             </header> -->
         <%- include ('./partials/nav.ejs') %>  
         
         <main>
@@ -75,11 +77,8 @@
             <div class="container-fluid text-center">
               <a class="btn btn-secondary btn-lg" href="/order"> للطلب</a>
             </div>
-            <%- include ('./partials/footer.ejs') %>  
-            
-
-            
-        </main>
+            <%- include ('./partials/footer.ejs') %>
+          </main>
     </body>
 </html>
 

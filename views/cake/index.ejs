@@ -3,49 +3,52 @@
 <html dir="rtl" lang="ar">
         <%- include ('../partials/head.ejs', {page: 'All cake'}) %>
         <%- include ('../partials/nav.ejs') %>  
-    <section class="hero is-medium has-background-light">
-        <div class="hero-body">
-            <p class="title"> مطبخ ام نور للحلويات  </p>
-        </div>
-    </section>
+        <section class="hero is-medium has-background-light">
+            <div class="hero-body text-center">
+                <h1 class="title">    حلويات ام نور  <h1>
+            </div>
+        </section>
+    <STYLE>
+        img{
+            width: 60px;
+            height: 120px;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            gap: 10px;
+            /* background-color: #2196F3; */
+            padding: 10px;
+        }
+    </STYLE>
 
-    <main class="container is-max-widescreen">
-        <div class="columns is-multiline p-5">
-            
-            <% for (let idx =0; idx<cake.length; idx++){ %> <% 
-                const gateau = cake[idx] %>
-                    <div class="column is-one-third">
-                        <article class="card">
-                            <section class="card-image">
-                                <a href="/cake/<%= gateau.id%>" >
-                                <figure class="image is-3by3">
-                                        <img src="<%= gateau.image%> " alt="Placeholder image" />
-                                    </figure>
-                                </a>
+    <main class="">
+         <!-- "columns is-multiline p-5" -->
+            <div class="grid-container ">
+                <% for (let idx =0; idx<cake.length; idx++){ %> <% 
+                    const gateau = cake[idx] %>
+                        <div class="card">
+                            <a href="/cake/<%= gateau.id%>" >
+                                <img  class=" card-img-top" src="<%= gateau.image%> " alt="Placeholder image" />
+                            </a>
+                            <div class="card-title text-center">
+                                <a href="/cake/<%= gateau.id%>" ><%= gateau.name %> </a>
+                                <span>درهم/الكيلو<%= gateau.price%></span>
+                            </div>
+                    
                         </div>
-                    </section>
-                            <div class="card-content">
-                                <div class="content">
-                                    <h3>
-                                        <a href="/cake/<%= gateau.id%>" ><%= gateau.name %> </a>
-                                    </h3>
-                                    <hr/>
-                                    <p>$<%= gateau.price%></p>
-                                </div>
+                        <!-- <div class="card">
+                            <div class="card-image">
+                                <img src=""/>
+                                <h3>user.name</h3>
                             </div>
-                            <div class="card">
-                                <div class="card-image">
-                                    <img src=""/>
-                                    <h3>user.name</h3>
-                                </div>
-                                <div>
-                                    <a href="">review</a>
-                                </div>
+                            <div>
+                                <a href="">review</a>
                             </div>
-                    </article>
-                </div>
-            <% } %>           
-        </div>
+                        </div> -->
+                <% } %> 
+            </div> 
+        <%- include ('../partials/footer.ejs') %> 
     </main>
 </body>
 </html>

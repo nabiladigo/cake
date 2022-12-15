@@ -5,27 +5,39 @@
        
         <section class="selector">
             <form action="/cake/<%=cake.id%>?_method=PUT" method="POST">
-                <fieldset>
-                    <legend> تعديل </legend>
-                        <div class="form-group">
-                          <label for="cake-name"> اسم الحلوى </label>
-                          <input type="text" placeholder ="اسم الحلوى " name="name" value="<%= cake.name %>"/>
-                        </div>
+                <fieldset class="text-center">
+                  <section class="hero is-medium has-background-light">
+                    <div class="hero-body text-center">
+                        <h1 class="title">  تعديل   <h1>
+                    </div>
+                  </section>
+                  <div class="form-group">
+                    <label for="cake-name"> اسم الحلوى </label>
+                    <div>
+                      <input type="text" placeholder ="اسم الحلوى " name="name" value="<%= cake.name %>"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="cake-price"> ثمن الحلوى  </label>
+                    <div>
+                      <input type="number" placeholder=" الثمن " name="price"  value="<%= cake.price %>"/>
+                    </div>
+                  </div>
 
-                        <div class="form-group">
-                          <label for="cake-price"> ثمن الحلوى  </label>
-                          <input type="number" placeholder=" الثمن " name="price"  value="<%= cake.price %>"/>
-                        </div>
-
-                        <div class="form-group">
-                          <label for="cake-image"> صورة الحلوى </label>
-                          <input type="text" placeholder="http://" name="image" value="<%= cake.image %> " />
-                        </div>
-
-                        <div class="control">
-                          <a class="button " href="/cake/<%= cake.id %> ">إلغاء</a>
-                          <button class="btn btn-success" type="edit ">تعديل </button>
-                        </div>
+                  <div class="form-group">
+                    <label for="cake-image"> صورة الحلوى </label>
+                    <div>
+                      <input type="text" placeholder="http://" name="image" value="<%= cake.image %> " />
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                    <div class="control">
+                      <a class="button " href="/cake/<%= cake.id %> ">إلغاء</a>
+                      <br>
+                      <button class="btn btn-success" type="edit ">تعديل </button>
+                    </div>
+                  </div> 
                 </fieldset>
             </form>
         </section>

@@ -5,15 +5,15 @@
     
     <!-- This is my nav bar now -->
     <%- include ('../partials/nav.ejs') %>
-
-        <section class="hero-is-medium has-background-light">
-            <div class="hero-body">
-                <h1 class="title"> اضافة  حلوى جديدة </h1>
-            </div>
-        </section>
+    <section class="hero is-medium has-background-light">
+        <div class="hero-body text-center">
+            <h1 class="title">  اضافة  حلوى جديدة  <h1>
+        </div>
+    </section>
+        <div class="container-fluid m-5 text-center">
             <form action="/cake" method="POST">
                 <div class="field">
-                    <label class="label"> اسم الحلوى  </label>
+                    <label class="label"> اسم الحلوى:  </label>
                     <div class="control">
                         <input
                             class="input"
@@ -25,14 +25,14 @@
                 </div>
         
                 <div class="field">
-                    <label class="label"> ثمن الحلوى </label>
+                    <label class="label"> ثمن الحلوى :</label>
                     <div class="control">
                         <input class="input" type="number" placeholder="الثمن " name="price" />
                     </div>
                 </div>
         
                 <div class="field">
-                    <label class="label"> صورة الحلوى  </label>
+                    <label class="label"> صورة الحلوى:  </label>
                     <div class="control">
                         <input
                             class="input"
@@ -43,7 +43,7 @@
                     </div>
                 </div>
                 <div class="field">
-                    <label class="label"> وصف الحلوى</label>
+                    <label class="label"> وصف الحلوى:</label>
                     <div class="control">
                         <input
                             class="input"
@@ -53,13 +53,13 @@
                         />
                     </div>
                 </div>
-        
+                <br>
                 <div class="field is-grouped">
                     <div class="control">
                         <button class="button is-info">اضف</button>
                     </div>
                 </div>
             </form>
-        </section>
+        </div>
     </body>
 </html>

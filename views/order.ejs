@@ -5,18 +5,31 @@
         <%- include ('./partials/nav.ejs') %>  
     <section class="hero is-medium has-background-light">
         <div class="hero-body">
-            <p class="title"> مطبخ ام نور للحلويات  </p>
+            <h1 class="title">    حلويات ام نور المشكلة لجميع المناسبات   </h1>
         </div>
     </section>
     <main>
+        <style>
+            .footer{           
+                position: fixed;
+                height: 18rem;
+                bottom: 0px;
+                left: 0px;
+                right: 0px;
+                margin-bottom: 0px
+            }
+        </style>
         <div> 
-            <p>
-                     للطلب المرجو التصال بالرقم:
-                06-34-05-98-72
+            <div class="row">
+                <h3 class="text-center">للطلب المرجو التصال بالرقم:</h3>
+                <span class="text-center">06-34-05-98-72</span>
+                
 
-            </p>
+            </div>
         </div>
-        <%- include ('./partials/footer.ejs') %>  
+        <div class="footer">
+            <%- include ('./partials/footer.ejs') %>  
+        </div>
     </main>
 </body>
 </html>
