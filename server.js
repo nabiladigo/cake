@@ -16,9 +16,14 @@ app.use('/recipes', controllers.Recipe);
 // app.use('/review', controllers.Review);
 
 app.get('/', (req,res)=>{
-    res.render('home')})
+    res.render('home');
+});
 app.get('/about', (req,res)=>{
-    res.render('about')})
+    res.render('about');
+});
+app.get('/order', (req, res)=>{
+    res.render('order');
+});
 
 app.get("/*", (req, res) => {
     const context = { error: req.error };
