@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "bootstrap": "^5.2.3",
+    "bootstrap-icons": "^1.10.2",
     "bootstrap5": "^1.1.9",
     "dotenv": "^16.0.3",
     "ejs": "^3.1.8",

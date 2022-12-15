@@ -1,45 +1,46 @@
-
-<!--https://bootstrap-cheatsheet.themeselection.com/#navbar-dark--> 
-<nav class="navbar navbar-expand-xl navbar-dark bg-dark">
-    <div class="container-fluid">
-    <a class="navbar-brand" href="/home"> مطبخ ام نور للحلويات </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDark" aria-controls="navbarDark" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">مطبخ ام نور للحلويات</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse show" id="navbarDark">
-        <ul class="navbar-nav me-auto mb-2 mb-xl-0">
-            <li class="nav-item">
-                <a class="nav-link" href="/">الصفحة الرئيسية</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="/about" tabindex="-1" aria-current="page"> معلومات عني </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="/cake" tabindex="-1" aria-current="page"> حلويات </a>
-                <ul>
-                    <li>حلويات </li>
-                    <li>خبز</li>
-                    <li>كريب</li>
-                </ul>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/recipes">وصفات </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/cake/new">حلوى جديدة </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/recipes/new">وصفة جديدة </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/"> تسجيل الدخول</a>
-            </li>
-
-        </ul>
-        <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-light" type="submit">بحث</button>
-        </form>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">الصفحة الرئيسية <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">معلومات عني </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cake">حلويات </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/recipes">وصفات </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cake/new">حلوى جديدة  </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/recipes/new">وصفة جديدة  </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/">تسجيل الدخول  </a>
+        </li>
+        <!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="/cake" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           حلويات 
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/bread">bread</a>
+            <a class="dropdown-item" href="/asta"past</a>
+            <a class="dropdown-item" href="/dishes">moroccan dishes</a>
+          </div>
+        </li> -->
+      </ul>
+      <form class="d-flex">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">بحث</button>
+      </form>
     </div>
-    </div>
-</nav>
+  </nav>
