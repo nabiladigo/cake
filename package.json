@@ -7,7 +7,7 @@
     "mongoose": "^6.7.5"
   },
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "name": "cake",
   "version": "1.0.0",
