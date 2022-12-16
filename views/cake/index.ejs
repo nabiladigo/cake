@@ -8,23 +8,11 @@
                 <h1 class="title">    حلويات ام نور  <h1>
             </div>
         </section>
-    <STYLE>
-        img{
-            width: 60px;
-            height: 120px;
-        }
-        .grid-container {
-            display: grid;
-            grid-template-columns: auto auto auto auto;
-            gap: 10px;
-            /* background-color: #2196F3; */
-            padding: 10px;
-        }
-    </STYLE>
+    
 
-    <main class="">
+    <main >
          <!-- "columns is-multiline p-5" -->
-            <div class="grid-container ">
+            <div class="grid-container">
                 <% for (let idx =0; idx<cake.length; idx++){ %> <% 
                     const gateau = cake[idx] %>
                         <div class="card">
@@ -48,7 +36,8 @@
                         </div> -->
                 <% } %> 
             </div> 
-        <%- include ('../partials/footer.ejs') %> 
+                <%- include ('../partials/footer.ejs') %> 
+    
     </main>
 </body>
 </html>

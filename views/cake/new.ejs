@@ -5,6 +5,7 @@
     
     <!-- This is my nav bar now -->
     <%- include ('../partials/nav.ejs') %>
+    
     <section class="hero is-medium has-background-light">
         <div class="hero-body text-center">
             <h1 class="title">  اضافة  حلوى جديدة  <h1>
@@ -15,12 +16,7 @@
                 <div class="field">
                     <label class="label"> اسم الحلوى:  </label>
                     <div class="control">
-                        <input
-                            class="input"
-                            type="text"
-                            placeholder="اسم الحلوى "
-                            name="name"
-                        />
+                        <input class="input" type="text" placeholder="اسم الحلوى " name="name"/>
                     </div>
                 </div>
         
@@ -34,25 +30,15 @@
                 <div class="field">
                     <label class="label"> صورة الحلوى:  </label>
                     <div class="control">
-                        <input
-                            class="input"
-                            type="text"
-                            placeholder="http://"
-                            name="image"
-                        />
+                        <input class="input" type="text" placeholder="http://" name="image"/>
                     </div>
                 </div>
-                <div class="field">
+                <!-- <div class="field">
                     <label class="label"> وصف الحلوى:</label>
                     <div class="control">
-                        <input
-                            class="input"
-                            type="text"
-                            placeholder="وصف"
-                            name="description"
-                        />
+                        <input class="input" type="text" placeholder="وصف" name="description"/>
                     </div>
-                </div>
+                </div> -->
                 <br>
                 <div class="field is-grouped">
                     <div class="control">
@@ -60,6 +46,9 @@
                     </div>
                 </div>
             </form>
+        </div>
+        <div class="footer">
+            <%- include ('../partials/footer.ejs') %> 
         </div>
     </body>
 </html>

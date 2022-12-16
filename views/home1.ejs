@@ -1,56 +1,30 @@
 <!DOCTYPE html>
 <html dir="rtl" lang="ar">
-    <%- include ('../partials/head.ejs', {page: 'Artist' }) %>
-    <%- include ('../partials/nav.ejs') %>
-    <style>
-        img{
-            width: 10px;
-            height: 450px;
-        }
-        .card{
-            border: solid 2px;
-        }
-        .edit{
-            padding-left: 5px;
-            padding-right: 15px;
-        }
-    </style>
-    <main class=" p-5 m-5">
-      <section class="hero is-medium has-background-light">
-          <div class="hero-body text-center">
-              <h1 class="title">    حلويات ام نور  <h1>
-          </div>
-      </section>
-          <div class="container p-5 ">
-                <div class="card  ">
-                    <img  class=" card-img-top " src="<%= cake.image%> " alt="Placeholder image" />
-                    <div class="card-title text-center"><%= cake.name %>
-                        <span>درهم/الكيلو<%= cake.price %></span>
-                    </div>
-                    <div class="row edit">
-                        <div class="control col">
-                            <a class="button is-info" href="/cake/<%= cake.id %>/edit">تعديل</a>
-                        </div>
-                        <div class="control col">
-                            <form action="/cake/<%= cake.id %>?_method=DELETE" method="POST">
-                                    <input class="button is-danger" type="submit" value="	Delete Cake"/>                    
-                            </form>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h4>الوصف</h4>
-                    <p>
-                      <%= cake.description %>
-                    </p>
-                    </div>
-                </div>      
-              
-            </div>
-            <div class="container-fluid text-center ">
-              <a class="btn btn-secondary btn-lg" href="/order"> للطلب</a>
-            </div>           
-          <br>
-          <div class="container-fluid carousel ">
+  
+        <%- include ('./partials/head.ejs', {page: 'Cake'}) %>
+         <!-- need to work on header -->
+        <!-- <style>
+          .header-img{
+            background-size: cover; 
+             height: 100%;
+            width: 100%; 
+
+          }
+        </style>
+            <div>
+              <img class="header-img "style="width:400px; height: 400px;" src="https://i.imgur.com/Jop6XGR.jpg"/>
+            </div> */
+             </header> -->
+        <%- include ('./partials/nav.ejs') %>  
+  <body>      
+        <main>
+        
+          
+            <h1> الصفحة الرئيسية</h1>
+            
+            
+            
+            <!-- <div class="container-fluid">
               <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                   <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -77,8 +51,28 @@
                   <span class="visually-hidden">Next</span>
                 </button>
               </div>
+            </div> -->
+            <br>
+            <div class="container-fluid">
+                <h1> معلومات عني </h1>
+                <div class="card about">
+                    <img class="card-img-top a-img "  src="https://scontent-iad3-2.xx.fbcdn.net/v/t39.30808-6/293351472_3210368029227928_1071758650995429185_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=174925&_nc_ohc=sO9cx7DzOn4AX8PKDPe&_nc_ht=scontent-iad3-2.xx&oh=00_AfDgxQa490XscC70hUXKGORFYE-oKZe4n1ttwue9Cw5DuQ&oe=639FB446" alt="Card image" />
+                    <div class="card-body">
+                            <p class="card-text">
+                              بدأت شغف هند بالحلويات المغربية منذ الصغر لكن كمهنة بدأت منذ عام 2016 و لأن الجميع أحب حلوياتها كثيرا،أضافت الى ذلك التدوين بهدف  تعليم الناس كيفية طهي الحلويات المغربية الاصيلة.   
+                            </p>
+                            <a class="btn btn-info" role="button" href="/about">اقرأ المزيد</a>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="container-fluid text-center">
+              <a class="btn btn-secondary btn-lg" href="/order"> للطلب</a>
             </div>
           </main>
-        <%- include ('../partials/footer.ejs') %>
-</body>
-</html> 
+            <%- include ('./partials/footer.ejs') %>
+  </body>
+</html>
+
+
+
