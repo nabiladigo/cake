@@ -1,4 +1,5 @@
-mongoose.connect( process.env.MONGODB_URI || "YOUR CURRENT LOCALHOST DB CONNECTION STRING HERE" );
+require('../config/db.connection');
+ 
 module.exports= {
     Cake: require('./cake_model'),
     Recipe:require('./recipes_model'),
