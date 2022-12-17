@@ -2,7 +2,8 @@
 <html dir="rtl" lang="ar">
         <%- include ('../partials/head.ejs', {page: 'Edit songs'}) %>
         <%- include ('../partials/nav.ejs') %>
-       
+      <main>
+
         <section class="selector">
             <form action="/cake/<%=cake.id%>?_method=PUT" method="POST">
                 <fieldset class="text-center">
@@ -41,6 +42,8 @@
                 </fieldset>
             </form>
         </section>
+      </main>
+      <%- include ('./partials/footer.ejs') %>
       </body>
     </html>
       

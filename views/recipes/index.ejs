@@ -3,13 +3,13 @@
 <html dir="rtl" lang="ar">
         <%- include ('../partials/head.ejs', {page: 'All recipe'}) %>
         <%- include ('../partials/nav.ejs') %>  
-    <section class="hero is-medium has-background-light">
-        <div class="hero-body">
-            <p class="title"> وصفات  ام نور  </p>
-        </div>
-    </section>
     <main class="container is-max-widescreen">
-        <div class="columns is-multiline p-5">
+        <section class="hero is-medium has-background-light">
+            <div class="hero-body">
+                <p class="title"> وصفات  ام نور  </p>
+            </div>
+        </section>
+        <div class="grid-container">
             <% for (let i= 0; i<recipe.length; i++){ %> 
                 <% const rec= recipe[i] %>
                 <div class="column is-one-third">
@@ -37,8 +37,8 @@
             <% }  %>      
         </div>
         <div class="footer">
-            <%- include ('../partials/footer.ejs') %> 
         </div>
     </main>
+    <%- include ('../partials/footer.ejs') %> 
 </body>
 </html>

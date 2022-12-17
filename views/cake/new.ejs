@@ -5,50 +5,51 @@
     
     <!-- This is my nav bar now -->
     <%- include ('../partials/nav.ejs') %>
-    
-    <section class="hero is-medium has-background-light">
-        <div class="hero-body text-center">
-            <h1 class="title">  اضافة  حلوى جديدة  <h1>
-        </div>
-    </section>
-        <div class="container-fluid m-5 text-center">
-            <form action="/cake" method="POST">
-                <div class="field">
-                    <label class="label"> اسم الحلوى:  </label>
-                    <div class="control">
-                        <input class="input" type="text" placeholder="اسم الحلوى " name="name"/>
-                    </div>
+        <main>
+            <section class="hero is-medium has-background-light">
+                <div class="hero-body text-center">
+                    <h1 class="title">  اضافة  حلوى جديدة  <h1>
                 </div>
-        
-                <div class="field">
-                    <label class="label"> ثمن الحلوى :</label>
-                    <div class="control">
-                        <input class="input" type="number" placeholder="الثمن " name="price" />
-                    </div>
+            </section>
+                <div class="container-fluid m-5 text-center">
+                    <form action="/cake" method="POST">
+                        <div class="field">
+                            <label class="label"> اسم الحلوى:  </label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="اسم الحلوى " name="name"/>
+                            </div>
+                        </div>
+                
+                        <div class="field">
+                            <label class="label"> ثمن الحلوى :</label>
+                            <div class="control">
+                                <input class="input" type="number" placeholder="الثمن " name="price" />
+                            </div>
+                        </div>
+                
+                        <div class="field">
+                            <label class="label"> صورة الحلوى:  </label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="http://" name="image"/>
+                            </div>
+                        </div>
+                        <!-- <div class="field">
+                            <label class="label"> وصف الحلوى:</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="وصف" name="description"/>
+                            </div>
+                        </div> -->
+                        <br>
+                        <div class="field is-grouped">
+                            <div class="control">
+                                <button class="button is-info">اضف</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-        
-                <div class="field">
-                    <label class="label"> صورة الحلوى:  </label>
-                    <div class="control">
-                        <input class="input" type="text" placeholder="http://" name="image"/>
-                    </div>
+                <div class="footer">
                 </div>
-                <!-- <div class="field">
-                    <label class="label"> وصف الحلوى:</label>
-                    <div class="control">
-                        <input class="input" type="text" placeholder="وصف" name="description"/>
-                    </div>
-                </div> -->
-                <br>
-                <div class="field is-grouped">
-                    <div class="control">
-                        <button class="button is-info">اضف</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <div class="footer">
-            <%- include ('../partials/footer.ejs') %> 
-        </div>
+            </main>
+        <%- include ('../partials/footer.ejs') %> 
     </body>
 </html>

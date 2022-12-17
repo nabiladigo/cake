@@ -3,51 +3,54 @@
     <%- include ('../partials/head.ejs', {page: 'Artist' }) %>
     <%- include ('../partials/nav.ejs') %>
 
-    <section class="hero is-medium has-background-light">
-        <div class="hero-body">
-            <!-- <h1 class="title"> وصفات </h1> -->
-        </div>
-    </section>
-
-    <div class="container is-max-widescreen p-5">
-        <article class="media">
-            <section class="card-image">
-                <figure class="image is-3by3">
-                    <img src="<%= recipe.image %>" alt="Placeholder image" />
-                </figure>
-            </section>       
-            <div class="card-content">
-                <div class="content">
-                    <div class="card-title">
-                        <%= recipe.name %>
-                    </div>
-                    <small><%= recipe.cooking %> min </small>
-                    <small><%= recipe.prep %> min</small>
-                    <p>
-                        <div>ingredints:
-                            <ul>
-                                <li>
-                                    <%= recipe.ingredients %>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>directions:
-                            <%= recipe.direction %></div>
-                    </p>
-                    <div class="field mt-5 is-grouped">
-                        <div class="control">
-                            <a class="button is-info" href="/recipes/<%= recipe.id %>/edit">تعديل</a>
-                        </div>
-
-                        <div class="control">
-                            <form action="/recipes/<%= recipe.id %>?_method=DELETE" method="POST">
-                                    <input class="button is-danger" type="submit" value="	Delete recipe"/>                    
-                            </form>
-                        </div>
-                    </div>                
+        <main>
+            <section class="hero is-medium has-background-light">
+                <div class="hero-body">
+                    <!-- <h1 class="title"> وصفات </h1> -->
                 </div>
-            </div>
-        </article>
-    </div>  
+            </section>
+        
+            <div class="container is-max-widescreen p-5">
+                <article class="media">
+                    <section class="card-image">
+                        <figure class="image is-3by3">
+                            <img src="<%= recipe.image %>" alt="Placeholder image" />
+                        </figure>
+                    </section>       
+                    <div class="card-content">
+                        <div class="content">
+                            <div class="card-title">
+                                <%= recipe.name %>
+                            </div>
+                            <small><%= recipe.cooking %> min </small>
+                            <small><%= recipe.prep %> min</small>
+                            <p>
+                                <div>ingredints:
+                                    <ul>
+                                        <li>
+                                            <%= recipe.ingredients %>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>directions:
+                                    <%= recipe.direction %></div>
+                            </p>
+                            <div class="field mt-5 is-grouped">
+                                <div class="control">
+                                    <a class="button is-info" href="/recipes/<%= recipe.id %>/edit">تعديل</a>
+                                </div>
+        
+                                <div class="control">
+                                    <form action="/recipes/<%= recipe.id %>?_method=DELETE" method="POST">
+                                            <input class="button is-danger" type="submit" value="	Delete recipe"/>                    
+                                    </form>
+                                </div>
+                            </div>                
+                        </div>
+                    </div>
+                </article>
+            </div>  
+        </main>
+    <%- include ('./partials/footer.ejs') %>
 </body>
 </html> 

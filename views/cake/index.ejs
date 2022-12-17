@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 
 <html dir="rtl" lang="ar">
-        <%- include ('../partials/head.ejs', {page: 'All cake'}) %>
+        <%- include ('../partials/head.ejs', {page: 'حلويات ام نور '}) %>
         <%- include ('../partials/nav.ejs') %>  
-        <section class="hero is-medium has-background-light">
-            <div class="hero-body text-center">
-                <h1 class="title">    حلويات ام نور  <h1>
-            </div>
-        </section>
-    
-
-    <main >
-         <!-- "columns is-multiline p-5" -->
+        <main >
+            <section class="hero is-medium mb-5">
+                <div class="hero-body text-center">
+                    <h1 class="title">    حلويات ام نور  <h1>
+                </div>
+            </section>
             <div class="grid-container">
                 <% for (let idx =0; idx<cake.length; idx++){ %> <% 
                     const gateau = cake[idx] %>
-                        <div class="card">
-                            <a href="/cake/<%= gateau.id%>" >
-                                <img  class=" card-img-top" src="<%= gateau.image%> " alt="Placeholder image" />
-                            </a>
+                        <div class="card ca-index">
+                            <!-- <a href="/cake/<%= gateau.id%>" > -->
+                                <img  class=" ca-img card-img-top" src="<%= gateau.image%> " alt="Placeholder image" />
+                            <!-- </a> -->
                             <div class="card-title text-center">
-                                <a href="/cake/<%= gateau.id%>" ><%= gateau.name %> </a>
-                                <span>درهم/الكيلو<%= gateau.price%></span>
+                                <!-- <a class="ca-name"href="/cake/<%= gateau.id%>" > -->
+                                    <%= gateau.name %>
+                                 <!-- </a> -->
+                                <span class="price">
+                                     MAD/kg<%= gateau.price%>
+                                </span>
                             </div>
                     
                         </div>
+                        <!-- درهم/الكيلو -->
+                        <!-- <%= gateau.price%> -->
                         <!-- <div class="card">
                             <div class="card-image">
                                 <img src=""/>
@@ -35,9 +38,8 @@
                             </div>
                         </div> -->
                 <% } %> 
-            </div> 
-                <%- include ('../partials/footer.ejs') %> 
-    
-    </main>
+            </div>           
+        </main>
+        <%- include ('../partials/footer.ejs') %> 
 </body>
 </html>
