@@ -6,9 +6,22 @@ const cakeSchema= new mongoose.Schema({
     price:{
         type: Number,
         min: [0, 'you can not add a negative number']},
-    recipe: {
-        type: String
-    }
+        direction:{
+            type: String,
+            // required: true
+        },
+        ingredients:{
+            type: String,
+            required: true
+        },
+        cooking:{
+            type:Number,
+            // required:true
+        },
+        prep:{
+            type:Number,
+            // required:true
+        }
 })
 const Cake = mongoose.model('Cake', cakeSchema);
 module.exports = Cake;

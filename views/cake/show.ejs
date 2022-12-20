@@ -27,6 +27,9 @@
                     <div class="card-title text-center"><%= cake.name %>
                         <span>درهم/الكيلو<%= cake.price %></span>
                     </div>
+                    <div>
+                      <%= cake.recipe %>
+                    </div>
                     <div class="row edit">
                         <div class="control col">
                             <a class="button is-info" href="/cake/<%= cake.id %>/edit">تعديل</a>
@@ -44,7 +47,7 @@
                     </p>
                     </div>
                 </div>      
-              
+               
             </div>
             <div class="d-grid gab-2  col-4 mx-auto or-btn">
               <a class="text-center" style="color:inherit" href="/order"> 

@@ -26,7 +26,11 @@ const recipeSchema= new Schema({
     prep:{
         type:Number,
         // required:true
-    }
+    },
+    cake: {
+        type: mongoose.Types.ObjectId,
+        ref: "Cake",
+      }
 });
 
 const Recipe = mongoose.model('Recipe', recipeSchema);

@@ -1,6 +1,4 @@
-const express = require('express');
-const router= express.Router();
-const { Cake, Review } = require("../models");
+// const { Product, Review } = require("../models");
 
 // Review.deleteMany({}, function (error, deletedReviews) {
 //   if (error) {
@@ -10,18 +8,18 @@ const { Cake, Review } = require("../models");
 //     [
 //       {
 //         rating: 5,
-//         content: "taste delicious!",
-//         cake: "ID from your database",
+//         content: "Fast Delivery!",
+//         product: "ID from your database",
 //       },
 //       {
 //         rating: 3,
-//         content: "Took awhile to get here, but the cake is great.",
-//         cake: "ID from your database",
+//         content: "Took awhile to get here, but the product is great.",
+//         product: "ID from your database",
 //       },
 //       {
 //         rating: 4,
-//         content: "love  the cakes",
-//         cake: "ID from your database",
+//         content: "love the style of the products",
+//         product: "ID from your database",
 //       },
 //     ],
 //     function (error, createdReviews) {
@@ -33,18 +31,3 @@ const { Cake, Review } = require("../models");
 //     }
 //   );
 // });
-router.get("/", (req, res) => {
-  Review.find({})
-    .populate("product")
-    .exec((error, allReviews) => {
-      if (error) {
-        console.log(error);
-        req.error = error;
-        return next();
-      }
-      const context = { reviews: allReviews };
-      return res.render("reviews/index", context);
-   });
-});
-
-module.exports= router

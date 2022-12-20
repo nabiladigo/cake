@@ -11,7 +11,59 @@
                     <h1 class="title">  اضافة  حلوى جديدة  <h1>
                 </div>
             </section>
-                <div class="container-fluid m-5 text-center">
+            <form  calass="form-wrapper" action="/cake" method="POST"> 
+                <div class="form-row">
+                    <div class="form-col">
+                        <div class="form-item">
+                            <label class="label text-center" for="cake-name"> اسم الحلوى:  </label>
+                            <input  type="text" class="text-center" placeholder="اسم الحلوى " name="name"/>
+                        </div>
+                        <div class="form-item">
+                            <label class="label text-center"> ثمن الحلوى :</label>
+                            <input  type="number" class="text-center" placeholder="الثمن " name="price" />
+                        </div>
+                        <div class="form-item">
+                            <label class="label text-center"> صورة الحلوى:  </label>
+                            <input  type="text" class="text-center" placeholder="http://" name="image"/>
+                        </div>
+                        <div class="form-item">
+                            <label class="label text-center"> وصف الحلوى:</label>
+                            <input type="texterea" class="text-center" placeholder="وصف" name="description" col="30" rows="5"/>
+                        </div>
+                        <div class="form-item">
+                            <label for="ing-list" class="label text-center">المكونات:</label>
+                            <input type="texterea" class="text-center" placeholder="المكونات" name="ingredients" col="30" rows="10"/>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-row">
+                                <div class="form-item">
+                                    <label class="label text-center">Prep Time</label>
+                                    <input for="time_input" class="text-center" placeholder="prep-time" type="text"/>
+                                </div>
+                                <div class="form-item">
+                                    <label class="label text-center">Cooking Time</label>
+                                    <input for="time_input" class="text-center" placeholder="cooking-time" type="text"/>
+                                </div>
+                                <div class="form-item">
+                                    <label for="direction" class="label text-center">Direction</label>
+                                    <input type="textarea" class="text-center" placeholder="direction" name="deriction" row="10"/>
+                                </div>
+                                <div class="form-item">
+                                    <label for="cook-tips" class="label text-center">Cooking Tips</label>
+                                    <input type="textarea" class="text-center" placeholder="cooking tips" name="cook-tips" rows="5"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field is-grouped">
+                    <div class="control">
+                        <button class="button is-info">اضف</button>
+                    </div>
+                </div>
+            </form>
+        </main>
+                <!-- <div class="container-fluid m-5 text-center">
                     <form action="/cake" method="POST">
                         <div class="field">
                             <label class="label"> اسم الحلوى:  </label>
@@ -32,24 +84,15 @@
                             <div class="control">
                                 <input class="input" type="text" placeholder="http://" name="image"/>
                             </div>
-                        </div>
+                        </div> -->
+
+
                         <!-- <div class="field">
                             <label class="label"> وصف الحلوى:</label>
                             <div class="control">
                                 <input class="input" type="text" placeholder="وصف" name="description"/>
                             </div>
                         </div> -->
-                        <br>
-                        <div class="field is-grouped">
-                            <div class="control">
-                                <button class="button is-info">اضف</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="footer">
-                </div>
-            </main>
         <%- include ('../partials/footer.ejs') %> 
     </body>
 </html>

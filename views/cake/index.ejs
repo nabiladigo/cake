@@ -13,21 +13,18 @@
                 <% for (let idx =0; idx<cake.length; idx++){ %> <% 
                     const gateau = cake[idx] %>
                         <div class="card ca-index">
-                            <!-- <a href="/cake/<%= gateau.id%>" > -->
+                            <a href="/cake/<%= gateau.id%>" >
                                 <img  class=" ca-img card-img-top" src="<%= gateau.image%> " alt="Placeholder image" />
-                            <!-- </a> -->
+                            </a>
                             <div class="card-title text-center">
-                                <!-- <a class="ca-name"href="/cake/<%= gateau.id%>" > -->
+                                <a class="ca-name"href="/cake/<%= gateau.id%>" >
                                     <%= gateau.name %>
-                                 <!-- </a> -->
+                                 </a>
                                 <span class="price">
                                      MAD/kg<%= gateau.price%>
                                 </span>
                             </div>
-                    
                         </div>
-                        <!-- درهم/الكيلو -->
-                        <!-- <%= gateau.price%> -->
                         <!-- <div class="card">
                             <div class="card-image">
                                 <img src=""/>
@@ -38,7 +35,11 @@
                             </div>
                         </div> -->
                 <% } %> 
-            </div>           
+            </div>  
+        
+            <!--Add at bottom of card below the review content -->
+            
+           
         </main>
         <%- include ('../partials/footer.ejs') %> 
 </body>

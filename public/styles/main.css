@@ -166,7 +166,35 @@ span{
   padding: 30px;
   margin: 10px;
 }
-
+/* new form */
+.form-wrapper{
+  padding:10px;
+}
+.form-row{
+  display: flex;
+  flex-direction: row;
+}
+.form-col{
+  display: flex;
+  flex:1;
+  flex-direction: column;
+  max-width: 1120;
+  padding-left: 10px;
+}
+.form-item{
+  display: flex;
+  flex-direction: column;
+  padding-top: 15px;
+}
+label{
+  font-size:14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.time-input{
+  max-width: 100px;
+  margin-right: 25px;
+}
 /* .header-image {
   background-image: url(“cat.jpg”);
   background-position: center;
