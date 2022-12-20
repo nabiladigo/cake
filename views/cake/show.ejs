@@ -28,8 +28,31 @@
                         <span>درهم/الكيلو<%= cake.price %></span>
                     </div>
                     <div>
-                      <%= cake.recipe %>
+                        <div> 
+                            <div>
+                              <h6>وقت  الطهي:</h6>
+                              <%= cake.cooking%> دق
+                            </div>
+                            <div>
+                              <h6>وقت الاعداد:</h6>
+                              <%= cake.prep %> دق
+                            </div>
+                            <div> 
+                              <div>
+                                المكونات:
+                              </div>
+                                <ul>
+                                  <li>
+                                    <%= cake.ingredients %>                                     </li>
+                                </ul>
+                            </div>
+                            <div>
+                              <div>تعليمات:</div>
+                              <%= cake.direction %>
+                            </div>
+                        </div>
                     </div>
+                    
                     <div class="row edit">
                         <div class="control col">
                             <a class="button is-info" href="/cake/<%= cake.id %>/edit">تعديل</a>
@@ -39,12 +62,6 @@
                                     <input class="button is-danger" type="submit" value="	Delete Cake"/>                    
                             </form>
                         </div>
-                    </div>
-                    <div class="card-body">
-                        <h4>الوصف</h4>
-                    <p>
-                      <%= cake.description %>
-                    </p>
                     </div>
                 </div>      
                
