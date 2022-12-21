@@ -27,14 +27,10 @@ h1{
   flex-direction: row;
   align-items: center;
   background-color: #806491;
-  /* color:azure; */
 }
 .about .a-img {
   width: 30%;
 }
-/* .first{
-  float: left;
-} */
 .a-btn{
   background-color: #2F70AF;
 }
@@ -152,7 +148,6 @@ label{
 /* index */
 img{
   width: 2rem;
-  /* height: 1rem; */
 } 
 .price{
   float: left;
@@ -160,6 +155,7 @@ img{
 }
 .card{
   background-color: #806491;
+  border: solid 2px;
 }
 .card-title {
   color:azure;
@@ -181,19 +177,26 @@ img{
   margin: 10px;
 }
 /* show  */
-
-.card{
-  border: solid 2px;
-  /* background-color: #B9848C; */
+.card-body{
+  padding-left: 40px;
+  padding-right: 40px;
+  margin: 20px;
 }
 .edit{
   padding-left: 5px;
   padding-right: 15px;
 }
-.ca-show{
-  /* background-color: #B9848C;
-  ;
-  padding: 10px; */
+.flex-container {
+  display: flex;
+}
+
+.flex-child {
+  flex: 1;
+  border: 2px solid #02315E;
+  text-align: center;
+}  
+.ing{
+  font-size:20px;
 }
 /* .header-image {
   background-image: url(“cat.jpg”);

@@ -16,18 +16,18 @@
                       <%= cake.name %>
                     </div>
                     <div class="card-body">
-                      <div class=" time">
-                        <div>
+                      <div class=" flex-container">
+                        <div class="flex-child">
                           <h6>وقت  الطهي:</h6>
                           <%= cake.cooking%> دق
                         </div>
-                        <div>
+                        <div class="flex-child">
                           <h6>وقت الاعداد:</h6>
                           <%= cake.prep %> دق
                         </div>
                       </div>
                       <div> 
-                        <div>
+                        <div  class="ing">
                           المكونات:
                         </div>
                           <ul>
@@ -36,12 +36,12 @@
                           </ul>
                       </div>
                       <div>
-                        <div>تعليمات:</div>
+                        <div class="ing">تعليمات:</div>
                         <%= cake.direction %>
                       </div>
                     </div>
                     
-                    <div class="row edit">
+                    <!-- <div class="row edit">
                         <div class="control col">
                             <a class="button is-info" href="/cake/<%= cake.id %>/edit">تعديل</a>
                         </div>
@@ -50,7 +50,7 @@
                                     <input class="button is-danger" type="submit" value="	Delete Cake"/>                    
                             </form>
                         </div>
-                    </div>
+                    </div> -->
                 </div>      
                
             </div>
