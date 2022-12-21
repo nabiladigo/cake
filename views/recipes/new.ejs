@@ -22,54 +22,60 @@
                     <h1 class="title"> اضافة  وصفة جديدة   <h1>
                 </div>
             </section>
-                <div class="container-fluid m-5 text-center">
-                    <form action="/recipes" method="POST">
-                        <div class="field">
-                            <label class="label"> اسم الحلوى:  </label>
-                            <div class="control">
-                                <input class="input" type="text" placeholder="اسم الحلوى " name="name"/>
+            <form  calass="form-wrapper" action="/cake" method="POST"> 
+                <div class="form-row">
+                    <div class="form-col">
+                        <div class="form-item">
+                            <label class="label" for="cake-name"> اسم الحلوى:  </label>
+                            <div  class="control">
+                                <input  type="text" class="text-center" placeholder="اسم الحلوى " name="name"/>
                             </div>
                         </div>
-                        <div class="field">
+                        <div class="form-item">
                             <label class="label"> صورة الحلوى:  </label>
-                            <div class="control">
-                                <input class="input" type="text" placeholder="http://" name="image" />
+                            <div  class="control">
+                                <input  type="text" class="text-center" placeholder="http://" name="image"/>
                             </div>
                         </div>
-                        <div class="field">
-                            <label class="label"> وقت الاعداد: </label>
-                            <div class="control">
-                                <input class="input" type="number" placeholder="وقت الاعداد " name="cooking" />
+                        <div class="form-item">
+                            <label class="label"> وصف الحلوى:</label>
+                            <div  class="control">
+                                <textarea type="text" class="text-center" placeholder="وصف" name="description" col="30" rows="5"></textarea>
                             </div>
                         </div>
-                        <div class="field">
-                            <label class="label"> وقت  الطهي: </label>
-                            <div class="control">
-                                <input class="input" type="number" placeholder="وقت الطهي  " name="prep" />
+                        <div class="form-item">
+                            <label for="ing-list" class="label">المكونات:</label>
+                            <div  class="control">
+                                <textarea type="text" class="text-center" placeholder="المكونات" name="ingredients" col="30" rows="10"></textarea>
                             </div>
                         </div>
-                        <div class="field">
-                            <label class="label">  المكونات: </label>
-                            <div class="control">
-                                <input class="input" type="text" placeholder="مكونات" name="ingredients" />
+                        <div class="form-item">
+                            <label class="label">وقت الاعداد:</label>
+                            <div  class="control">
+                                <input for="time_input" class="text-center" placeholder="وقت الاعداد" type="text" name="prep"/>
                             </div>
                         </div>
-                        <div class="field">
-                            <label class="label">  تعليمات: </label>
-                            <div class="control">
-                                <input class="input" type="text" placeholder="تعليمات " name="direction" />
+                        <div class="form-item">
+                            <label class="label">وقت  الطهي:</label>
+                            <div  class="control">
+                                <input for="time_input" class="text-center" placeholder="وقت  الطهي" type="text" name="cooking"/>
                             </div>
                         </div>
-                        <br>
-                        <div class="field is-grouped">
-                            <div class="control">
-                                <button class="button is-info">اضف</button>
+                        <div class="form-item">
+                            <label for="direction" class="label">تعليمات:</label>
+                            <div  class="control">
+                                <input type="textarea" class="text-center" placeholder="تعليمات" name="direction" row="10"/>
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
-                
-            </main>
-        <%- include ('../partials/footer.ejs') %> 
+                <div class="field is-grouped">
+                    <div class="control">
+                        <button class="button is-info">اضف</button>
+                    </div>
+                </div>
+            </form>
+        </main>
+    <%- include ('../partials/footer.ejs') %> 
     </body>
 </html>

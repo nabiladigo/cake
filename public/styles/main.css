@@ -44,25 +44,6 @@ h1{
 	border-color: white;
 	transition: 0.35s;
 }
-/* cake index page */
-img{
-  width: 60px;
-  height: 120px;
-}
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  gap: 20px;
-  background-color: #02315E;
-  padding: 30px;
-  margin: 10px;
-}
-.container{
-  background-color: white;
-  padding: 10px;
-  margin-top: 5px;
-}
-
 /* footer */
 footer {
   background-color: #02315E;
@@ -138,34 +119,7 @@ span{
 	border-color: white;
 	transition: 0.35s;
 }
-/* index */
-.price{
-  float: left;
-  color:azure;
-}
-.ca-index{
-  background-color: #806491;
-}
-.ca-name{
-  color:azure;
-}
-/* img{
-  width: 60px;
-  height: 120px;
-} */
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  gap: 20px;
-  background-color: #02315E;
-  padding: 30px;
-  margin: 10px;
-}
-.container{
-  background-color: #02315E;;
-  padding: 30px;
-  margin: 10px;
-}
+
 /* new form */
 .form-wrapper{
   padding:10px;
@@ -194,6 +148,52 @@ label{
 .time-input{
   max-width: 100px;
   margin-right: 25px;
+}
+/* index */
+img{
+  width: 2rem;
+  /* height: 1rem; */
+} 
+.price{
+  float: left;
+  color:azure;
+}
+.card{
+  background-color: #806491;
+}
+.card-title {
+  color:azure;
+}
+.ca-name{
+  color:azure;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 20px;
+  background-color: #02315E;
+  padding: 30px;
+  margin: 10px;
+}
+.container{
+  background-color: #02315E;
+  padding: 30px;
+  margin: 10px;
+}
+/* show  */
+
+.card{
+  border: solid 2px;
+  /* background-color: #B9848C; */
+}
+.edit{
+  padding-left: 5px;
+  padding-right: 15px;
+}
+.ca-show{
+  /* background-color: #B9848C;
+  ;
+  padding: 10px; */
 }
 /* .header-image {
   background-image: url(“cat.jpg”);
