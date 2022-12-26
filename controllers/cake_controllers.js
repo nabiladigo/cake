@@ -87,7 +87,11 @@ router.put('/:cakeId', (req, res)=>{
             return res.redirect(`/cake/${updateCake.id}`);
         
     })
-})
+});
+
+// router.get('/show', (req,res)=>{
+//     res.render('home');
+// });
 
 
 module.exports= router;

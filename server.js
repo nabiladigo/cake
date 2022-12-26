@@ -10,11 +10,11 @@ app.use(express.urlencoded({extended:false}));
 app.use(express.static('public'));
 app.use(methodOverride('_method'));
 app.use('/cake', controllers.Cake);
-app.use('/recipes', controllers.Recipe);
+// app.use('/recipes', controllers.Recipe);
 
 // app.use('/user', controllers.User);
 // app.use('/review', controllers.Review);
-
+ 
 app.get('/', (req,res)=>{
     res.render('home');
 });
