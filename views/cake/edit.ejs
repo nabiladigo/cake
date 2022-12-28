@@ -3,7 +3,6 @@
         <%- include ('../partials/head.ejs', {page: 'Edit songs'}) %>
         <%- include ('../partials/nav.ejs') %>
       <main>
-
         <section class="selector">
             <form action="/cake/<%=cake.id%>?_method=PUT" method="POST">
                 <fieldset class="text-center">
@@ -24,11 +23,41 @@
                       <input type="number" placeholder=" الثمن " name="price"  value="<%= cake.price %>"/>
                     </div>
                   </div>
-
                   <div class="form-group">
                     <label for="cake-image"> صورة الحلوى </label>
                     <div>
                       <input type="text" placeholder="http://" name="image" value="<%= cake.image %> " />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="cake-price"> وصف الحلوى  </label>
+                    <div>
+                      <input type="number" placeholder=" الوصف " name="description"  value="<%= cake.description %>"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="cake-price"> المكونات </label>
+                    <div>
+                      <input type="number" placeholder=" المكونات" name="ingredients"  value="<%= cake.ingredients %>"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="cake-price"> وقت الاعداد  </label>
+                    <div>
+                      <input type="number" placeholder=" الوقت " name="prep"  value="<%= cake.prep %>"/>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="cake-image"> وقت  الطهي </label>
+                    <div>
+                      <input type="text" placeholder="الوقت" name="cooking" value="<%= cake.cooking %> " />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="cake-image">تعليمات </label>
+                    <div>
+                      <input type="text" placeholder="تعليمات" name="direction" value="<%= cake.direction %> " />
                     </div>
                   </div>
                   <br>
