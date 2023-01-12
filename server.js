@@ -4,16 +4,28 @@ require('./config/db.connection');
 const controllers = require('./controllers');
 const methodOverride = require('method-override');
 const PORT= process.env.PORT || 4000;
+const session =require("express-session");
+const MongoStore= require("connect-mongo");
 
 app.set('view engine','ejs');
 app.use(express.urlencoded({extended:false}));
 app.use(express.static('public'));
 app.use(methodOverride('_method'));
 app.use('/cake', controllers.Cake);
-// app.use('/recipes', controllers.Recipe);
+app.use('/', controllers.User);
 
-// app.use('/user', controllers.User);
 // app.use('/review', controllers.Review);
+app.use(
+    session({
+        store:MongoStore.create({ mongoUrl:"mongodb://localhost:27017/cake"}),
+        secret:"super secret",
+        resave: false,
+        saveUninitialized: false,
+        cookie:{
+            maxAge: 1000*60*24*7*2,
+        },
+    })
+);
  
 app.get('/', (req,res)=>{
     res.render('home');
