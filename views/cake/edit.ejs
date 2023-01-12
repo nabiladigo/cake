@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html dir="rtl" lang="ar">
-        <%- include ('../partials/head.ejs', {page: 'Edit songs'}) %>
+        <%- include ('../partials/head.ejs', {page: 'تعديل الحلوى'}) %>
         <%- include ('../partials/nav.ejs') %>
       <main>
         <section class="selector">
@@ -32,13 +32,13 @@
                   <div class="form-group">
                     <label for="cake-price"> وصف الحلوى  </label>
                     <div>
-                      <input type="number" placeholder=" الوصف " name="description"  value="<%= cake.description %>"/>
+                      <input type="text" placeholder=" الوصف " name="description"  value="<%= cake.description %>"/>
                     </div>
                   </div>
                   <div class="form-group">
                     <label for="cake-price"> المكونات </label>
                     <div>
-                      <input type="number" placeholder=" المكونات" name="ingredients"  value="<%= cake.ingredients %>"/>
+                      <input type="text" placeholder=" المكونات" name="ingredients"  value="<%= cake.ingredients %>"/>
                     </div>
                   </div>
                   <div class="form-group">
@@ -73,6 +73,6 @@
         </section>
       </main>
       <%- include ('../partials/footer.ejs') %>
-      </body>
-    </html>
+  </body>
+</html>
       
