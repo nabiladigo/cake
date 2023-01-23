@@ -11,31 +11,30 @@
           <a class="nav-link active nav-text" aria-current="page" href="/cake">حلويات </a>
         </li>
         <li class="nav-item">
-          <!-- <a class="nav-link nav-text" href="/cake/">وصفات</a> -->
-        </li>
-        <li class="nav-item">
-          <a class="nav-link nav-text" href="/about">معلومات عني </a>
+          <!-- <a class="nav-link nav-text" href="/about">معلومات عني </a> -->
         </li>
         <li class="nav-item">
           <a class="nav-link nav-text" href="/cake/new">حلوى جديدة </a>
         </li>
+        <div class="navbar-menu navbar-end">
+          <% if (typeof user !== 'undefined'){ %>
+            <p class="navbar-item"><%= user.username%></p>
+          <% } %>
+          <% if (typeof routes !== 'undefined') {%> <% routes.forEach((route)=>{ %>
+             <a class="navbar-item" href="<%= route.href %>"> <%= routes.title %></a>
+             <% }) %> 
+          <% } %>
+        </div>
         <li class="nav-item">
-          <!-- <a class="nav-link nav-text" href="/recipes/new">وصفة جديدة</a> -->
+          <a class="nav-link nav-text" href="user/register">تسجيل الدخول</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link nav-text" href="/register">تسجيل الدخول</a>
+          <a class="nav-link nav-text" href="/login">login</a>
         </li>
-        <!-- <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle nav-text" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item nav-text" href="#">Action</a></li>
-            <li><a class="dropdown-item nav-text" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item nav-text" href="#">Something else here</a></li>
-          </ul>
-        </li> -->
+        <li class="nav-item">
+          <a class="nav-link nav-text" href="/logout">log out</a>
+        </li>
+
         
       <!-- <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

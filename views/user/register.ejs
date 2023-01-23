@@ -11,52 +11,47 @@
         <h1 class="title">Register</h1>
         <form action="/register" method="POST" class="box">
           <div class="field">
-            <label class="label">Username</label>
-            <div class="control">
-              <input
-                name="username"
-                class="input"
-                type="text"
-                placeholder="Cooldev"
-              />
-            </div>
+            <label class="label" for="username">اسم المستخدم:</label>
+              <input class="input" name="username" type="text" placeholder="username" id="username"/>
           </div>
           <div class="field">
-            <label class="label">Email</label>
-            <div class="control">
+            <label class="label" for="email">البريد الإلكتروني:</label>
+            
               <input
-                name="email"
                 class="input"
+                name="email"
                 type="email"
+                id="email"
                 placeholder="example@domain.com"
               />
-            </div>
+            
           </div>
           <div class="field">
-            <label class="label">Password</label>
-            <div class="control">
+            <label class="label" for="password">كلمة السر:</label>
+            
               <input
+                class="input"
                 name="password"
-                class="input"
                 type="password"
                 placeholder="******"
               />
-            </div>
-          <div class="field">
-            <label class="label">Password Confirmation</label>
-            <div class="control">
-              <input
-                name="passwordConfirmation"
-                class="input"
-                type="password"
-                placeholder="******"
-              />
-            </div>
           </div>
           <div class="field">
-            <div class="control">
-              <button class="button is-link is-fullwidth">Submit</button>
-            </div>
+            <label class="label" for password confirmation>تأكيد كلمة السر:</label>
+            
+              <input
+                name="password Confirmation"
+                class="input"
+                type="password"
+                placeholder="******"
+                id="passwordConfirmation"
+              />
+           
+          </div>
+          <div class="field">
+           
+              <button class="button is-link is-fullwidth">اشتراك</button>
+            
           </div>
         </form>
       </div>
